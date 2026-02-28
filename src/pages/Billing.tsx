@@ -28,8 +28,7 @@ const Billing = () => {
         "Validación automática de datos",
         "Envío automático a la DIAN",
         "Respuesta inmediata del estado",
-        "Múltiples formatos de salida",
-        "Integración con sistemas contables"
+        "Múltiples formatos de salida"
       ],
       color: "from-blue-500 to-blue-600"
     },
@@ -42,8 +41,7 @@ const Billing = () => {
         "Clasificación automática",
         "Búsqueda avanzada",
         "Descarga masiva de documentos",
-        "Notificaciones en tiempo real",
-        "Integración con ERP/Contabilidad"
+        "Notificaciones en tiempo real"
       ],
       color: "from-green-500 to-green-600"
     },
@@ -70,8 +68,7 @@ const Billing = () => {
         "Validación de proveedores",
         "Flujos de aprobación configurables",
         "Trazabilidad completa",
-        "Reportes de gestión",
-        "Integración con pagos"
+        "Reportes de gestión"
       ],
       color: "from-orange-500 to-orange-600"
     },
@@ -150,6 +147,7 @@ const Billing = () => {
       popular: false
     }
   ];
+
 
   const process = [
     {
@@ -342,6 +340,10 @@ const Billing = () => {
               </Card>
             ))}
           </div>
+          {/* Nota de términos y condiciones */}
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Aplica términos y condiciones para clientes nuevos
+          </p>
         </div>
       </section>
 
@@ -370,6 +372,18 @@ const Billing = () => {
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
             ))}
+          </div>
+          {/* Botón de cotización en WhatsApp */}
+          <div className="mt-12 text-center">
+            <Button size="lg" className="btn-hero" asChild>
+              <a
+                href="https://api.whatsapp.com/send?phone=573223674992&text=Cotiza%20con%20nosotros%20el%20proceso%20de%20implementaci%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cotiza con nosotros el proceso de implementación
+              </a>
+            </Button>
           </div>
         </div>
       </section>

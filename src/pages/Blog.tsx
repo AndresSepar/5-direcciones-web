@@ -7,27 +7,27 @@ const Blog = () => {
   const posts = [
     {
       id: 1,
-      title: "Todo lo que debes saber sobre Nómina Electrónica",
-      excerpt: "Guía completa sobre la implementación de nómina electrónica en Colombia según normativas vigentes.",
+      title: "De la intuición al tablero de control: el cambio que separa a las empresas que sobreviven de las que crecen",
+      excerpt: "En muchas empresas de Colombia pasa algo curioso: los dueños sienten que “conocen” su negocio, pero cuando se sientan a tomar decisiones importantes, lo hacen casi a ciegas.",
       date: "2025-01-30",
-      author: "Patricia López",
-      readTime: "5 min",
-      category: "Normatividad"
+      author: "Francia Londoño",
+      readTime: "1 mes",
+      category: "Empresarial"
     },
     {
       id: 2,
-      title: "Facturación Electrónica en Colombia: Beneficios y Regulaciones",
-      excerpt: "Descubre todos los beneficios de implementar facturación electrónica y cumple con las regulaciones.",
-      date: "2025-01-28",
+      title: "Factura electrónica 2026: El cambio silencioso que está transformando las pymes colombianas",
+      excerpt: "La facturación electrónica dejó de ser \"una obligación más\" para convertirse en una ventaja competitiva silenciosa. Mientras algunos empresarios la ven como un dolor de cabeza técnico, otros ya están aprovechando sus beneficios reales.",
+      date: "2026-02-26",
       author: "Carlos Ruiz",
-      readTime: "8 min",
+      readTime: "2 días",
       category: "Facturación"
     },
     {
       id: 3,
-      title: "Impuestos a Alimentos Ultraprocesados: Ley 2277 de 2022",
-      excerpt: "Análisis completo de la implementación y alcance de la nueva ley de impuestos a alimentos.",
-      date: "2025-01-25",
+      title: "Declaración de renta 2026: Las 5 trampas que están costando millones a las pymes. Ya cerraron febrero. La renta 2026 viene rápido. Aquí lo que NO te están diciendo.",
+      excerpt: "Realidad: La DIAN cruza automáticamente tu facturación electrónica con tu declaración. Si hay inconsistencias, recibes sanción automática.",
+      date: "2026-02-2",
       author: "María Gómez",
       readTime: "6 min",
       category: "Tributario"
@@ -44,9 +44,7 @@ const Blog = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Conexión <span className="text-accent">Empresarial</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Mantente actualizado con las últimas noticias, consejos y regulaciones empresariales.
-          </p>
+          {/* descripción eliminada */}
         </div>
       </section>
 

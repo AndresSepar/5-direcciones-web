@@ -60,73 +60,54 @@ const Home = () => {
     {
       id: 1,
       title: "Dirección Administrativa",
-      description: "Implementación, mantenimiento y mejora de procesos administrativos para agregar valor a las empresas.",
+      description: "Actua como brújula que asegura el rumbo, proyecta la visión empresarial, facilita la toma de decisiones y el uso eficiente de los recursos garantizando el éxito operativo.",
       image: direccionAdministrativa,
       icon: <Briefcase className="h-8 w-8" />,
       link: "/servicios/direccion-administrativa",
-      features: ["Optimización de procesos", "Gestión administrativa", "Mejora continua"]
+      features: ["Planeación estratégica", "Gestión comercial", "Gestión documental"]
     },
     {
       id: 2,
       title: "Dirección Contable y Financiera",
-      description: "Planes de acción contable y financiero bajo las Normas de Información Financiera.",
+      description: "Planifica, organiza, supervisa y controla las operaciones financieras, garantizando el cumplimiento fiscal.",
       image: direccionContable,
       icon: <BarChart3 className="h-8 w-8" />,
       link: "/servicios/direccion-contable",
-      features: ["NIIF", "Estados financieros", "Análisis financiero"]
+      features: ["Estrategia tributaria", "Valoración de empresas", "Gestión contable", "Revisión fiscal"]
     },
     {
       id: 3,
-      title: "Gestión de Proyectos",
-      description: "Acompañamiento integral desde la formulación hasta la ejecución de proyectos empresariales.",
+      title: "Dirección Gestión de Proyectos",
+      description: "Orientamos tus ideas hacia la  realización; mediante la  planificación, ejecución y supervisión del proyecto  con objetivos estratégicos y uso eficiente de los recursos",
       image: gestionProyectos,
       icon: <Target className="h-8 w-8" />,
       link: "/servicios/gestion-proyectos",
-      features: ["Formulación", "Ejecución", "Seguimiento"]
+      features: ["Transformación digital", "Marketing digital", "Desarrollo web", "Fondos de inversión"]
     },
     {
       id: 4,
-      title: "Gestión del Talento Humano",
-      description: "Procesos integrados para atraer, gestionar, desarrollar, motivar y retener el mejor talento.",
+      title: "Dirección de Talento Humano",
+      description: "Coordina la gestión integral del personal, alineando el capital humano con los objetivos estratégicos de la empresa para mejorar la productividad, el clima laboral y la competitividad.",
       image: talentoHumano,
       icon: <Users className="h-8 w-8" />,
       link: "/servicios/talento-humano",
-      features: ["Selección", "Desarrollo", "Retención"]
+      features: ["Contratación laboral", "Evaluación de desempeño", "Desarrollo organizacional", "Capacitación", "Gestión de seguridad y salud en el trabajo"]
     },
     {
       id: 5,
       title: "Dirección Jurídica",
-      description: "Asesoría en procesos de constitución, disolución y aspectos legales empresariales.",
+      description: "Asesora, gestiona y defiende los  intereses legales de las empresas.",
       image: direccionJuridica,
       icon: <Shield className="h-8 w-8" />,
       link: "/servicios/direccion-juridica",
-      features: ["Constitución", "Disolución", "Asesoría legal"]
+      features: ["Registro de marcas", "Disolución", "Derechos de autor", "Protección de propiedad industrial"]
     },
-    {
-      id: 6,
-      title: "Marketing Digital",
-      description: "Estrategias digitales para impulsar el crecimiento y presencia online de tu empresa.",
-      image: marketingDigital,
-      icon: <TrendingUp className="h-8 w-8" />,
-      link: "/servicios/marketing-digital",
-      features: ["SEO/SEM", "Redes sociales", "Publicidad digital"],
-      isNew: true
-    },
-    {
-      id: 7,
-      title: "Desarrollo Web",
-      description: "Creación de sitios web modernos, funcionales y optimizados para tu negocio.",
-      image: desarrolloWeb,
-      icon: <Lightbulb className="h-8 w-8" />,
-      link: "/servicios/desarrollo-web",
-      features: ["Sitios web", "E-commerce", "Aplicaciones"],
-      isNew: true
-    }
+
   ];
 
   const stats = [
     { number: "500+", label: "Empresas Asesoradas", icon: <Briefcase className="h-8 w-8" /> },
-    { number: "5+", label: "Años de Experiencia", icon: <Star className="h-8 w-8" /> },
+    { number: "8+", label: "Años de Experiencia", icon: <Star className="h-8 w-8" /> },
     { number: "98%", label: "Satisfacción del Cliente", icon: <CheckCircle className="h-8 w-8" /> },
     { number: "50+", label: "Profesionales Especializados", icon: <Users className="h-8 w-8" /> }
   ];

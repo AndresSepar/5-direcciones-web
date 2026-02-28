@@ -35,27 +35,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-hero py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">
-            Mantente Actualizado con 5 Direcciones
-          </h3>
-          <p className="text-lg mb-6 opacity-90">
-            Recibe consejos empresariales, actualizaciones normativas y noticias del sector
-          </p>
-          <div className="max-w-md mx-auto flex gap-3">
-            <Input
-              type="email"
-              placeholder="Tu correo electrónico"
-              className="bg-white/20 border-white/30 text-white placeholder:text-white/70"
-            />
-            <Button className="bg-white text-primary hover:bg-white/90 px-6">
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </div>
+      {/* newsletter section removed */}
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">

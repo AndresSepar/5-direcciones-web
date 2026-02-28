@@ -4,6 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { 
   ArrowRight, 
   Search,
@@ -32,6 +40,9 @@ import desarrolloWeb from "@/assets/desarrollo-web.jpg";
 const Services = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [featureModalOpen, setFeatureModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalBody, setModalBody] = useState("");
 
   const categories = [
     { id: "all", name: "Todos los Servicios" },
@@ -48,17 +59,15 @@ const Services = () => {
     {
       id: 1,
       title: "Dirección Administrativa",
-      description: "Implementación, mantenimiento y mejora de procesos administrativos para optimizar la operación empresarial.",
+      description: "Actua como brújula que asegura el rumbo, proyecta la visión empresarial, facilita la toma de decisiones y el uso eficiente de los recursos garantizando el éxito operativo.",
       image: direccionAdministrativa,
       icon: <Briefcase className="h-8 w-8" />,
       category: "administrativa",
       features: [
-        "Diagnóstico organizacional",
-        "Diseño de procesos",
-        "Manuales de procedimientos",
-        "Indicadores de gestión",
-        "Mejora continua",
-        "Automatización de procesos"
+        { name: "Planeación estratégica", details: "Desarrollamos planes de acción detallados alineados con tus objetivos de negocio, incluyendo análisis FODA y presupuestos." },
+        { name: "Gestión comercial", details: "Optimizamos tus procesos de ventas y atención al cliente para maximizar ingresos y fidelización." },
+        { name: "Gestión documental", details: "Implementamos sistemas seguros para archivar y controlar documentos críticos, cumpliendo con normas legales." },
+        { name: "Sostenibilidad ambiental", details: "Asesoramos en prácticas ecológicas que reducen costos y mejoran la imagen corporativa." }
       ],
       benefits: [
         "Reducción de costos operativos hasta 30%",
@@ -75,12 +84,10 @@ const Services = () => {
       icon: <BarChart3 className="h-8 w-8" />,
       category: "financiera",
       features: [
-        "Implementación NIIF",
-        "Estados financieros",
-        "Análisis financiero",
-        "Presupuestos y proyecciones",
-        "Control interno",
-        "Auditoría interna"
+        { name: "Gestión contable", details: "Mantenemos tus registros financieros organizados y actualizados para garantizar información confiable." },
+        { name: "Revisoría fiscal", details: "Realizamos revisiones independientes para certificar la veracidad de tus estados financieros." },
+        { name: "Auditoría Forense", details: "Investigamos fraudes o irregularidades para protegerte de pérdidas y sanciones." },
+        { name: "Planeación tributaria", details: "Diseñamos estrategias legales para minimizar la carga tributaria y aprovechar beneficios fiscales." }
       ],
       benefits: [
         "Cumplimiento normativo garantizado",
@@ -92,17 +99,15 @@ const Services = () => {
     {
       id: 3,
       title: "Gestión de Proyectos",
-      description: "Acompañamiento integral desde la formulación hasta la ejecución exitosa de proyectos empresariales.",
+      description: "Orientamos tus ideas hacia la  realización; mediante la  planificación, ejecución y supervisión del proyecto  con objetivos estratégicos y uso eficiente de los recursos.",
       image: gestionProyectos,
       icon: <Target className="h-8 w-8" />,
       category: "proyectos",
       features: [
-        "Formulación de proyectos",
-        "Planificación estratégica",
-        "Gestión de recursos",
-        "Seguimiento y control",
-        "Gestión de riesgos",
-        "Cierre de proyectos"
+        { name: "Transformación digital", details: "Aplicamos tecnología para digitalizar procesos y mejorar la eficiencia operativa." },
+        { name: "Marketing digital", details: "Creamos campañas online para aumentar tu visibilidad y captar clientes." },
+        { name: "Desarrollo web", details: "Diseñamos y construimos sitios y aplicaciones a la medida para tu proyecto." },
+        { name: "Fondos de inversión", details: "Asesoramos en la estructuración y gestión de fondos para financiar tus proyectos." }
       ],
       benefits: [
         "95% de proyectos exitosos",
@@ -113,18 +118,15 @@ const Services = () => {
     },
     {
       id: 4,
-      title: "Gestión del Talento Humano",
-      description: "Procesos integrados para atraer, desarrollar, motivar y retener el mejor talento para tu organización.",
+      title: "Dirección Talento Humano",
+      description: "Coordina la gestión integral del personal, alineando el capital humano con los objetivos estratégicos de la empresa para mejorar la productividad, el clima laboral y la competitividad.",
       image: talentoHumano,
       icon: <Users className="h-8 w-8" />,
       category: "talento",
       features: [
-        "Selección y reclutamiento",
-        "Evaluación de desempeño",
-        "Desarrollo organizacional",
-        "Capacitación y formación",
-        "Gestión de nómina",
-        "Clima organizacional"
+        { name: "Contratación laboral", details: "Gestión integral de procesos de selección, contratación y cumplimiento de normativas laborales." },
+        { name: "Desarrollo organizacional", details: "Implementamos programas de capacitación y estructuración empresarial para optimizar el talento humano." },
+        { name: "Sistema de gestión de seguridad y salud en el trabajo", details: "Diseñamos y gestionamos el SG‑SST para proteger a tus empleados y cumplir las leyes vigentes." }
       ],
       benefits: [
         "Reducción de rotación 40%",
@@ -136,17 +138,17 @@ const Services = () => {
     {
       id: 5,
       title: "Dirección Jurídica",
-      description: "Asesoría legal integral en constitución, disolución y todos los aspectos jurídicos empresariales.",
+      description: "Asesora, gestiona y defiende los  intereses legales de las empresas.",
       image: direccionJuridica,
       icon: <Shield className="h-8 w-8" />,
       category: "juridica",
       features: [
-        "Constitución de empresas",
-        "Contratos comerciales",
-        "Cumplimiento normativo",
-        "Resolución de conflictos",
-        "Propiedad intelectual",
-        "Derecho laboral"
+        { name: "Registro de Marcas", details: "Tramitamos el registro y monitoreo de tus marcas para asegurar tu identidad corporativa." },
+        { name: "Derechos de autor", details: "Protegemos tus obras y contenidos contra uso no autorizado." },
+        { name: "Protección de propiedad industrial", details: "Aseguramos patentes, diseños y secretos industriales para proteger tu innovación." },
+        { name: "Resolución de conflictos", details: "Manejamos litigios y negociaciones para salvaguardar tus intereses legales." },
+        { name: "Propiedad intelectual", details: "Asesoramos sobre la gestión y comercialización de activos intangibles." },
+        { name: "Derecho laboral", details: "Brindamos apoyo en temas contractuales, demandas y cumplimiento de normas laborales." }
       ],
       benefits: [
         "Protección legal completa",
@@ -155,52 +157,7 @@ const Services = () => {
         "Cumplimiento regulatorio"
       ]
     },
-    {
-      id: 6,
-      title: "Marketing Digital",
-      description: "Estrategias digitales integrales para impulsar el crecimiento y la presencia online de tu empresa.",
-      image: marketingDigital,
-      icon: <TrendingUp className="h-8 w-8" />,
-      category: "digital",
-      isNew: true,
-      features: [
-        "Estrategia digital",
-        "SEO y SEM",
-        "Redes sociales",
-        "Email marketing",
-        "Publicidad digital",
-        "Analytics y reporting"
-      ],
-      benefits: [
-        "Incremento en ventas hasta 200%",
-        "Mayor visibilidad online",
-        "ROI medible y optimizable",
-        "Generación de leads calificados"
-      ]
-    },
-    {
-      id: 7,
-      title: "Desarrollo Web",
-      description: "Creación de sitios web modernos, funcionales y optimizados para convertir visitantes en clientes.",
-      image: desarrolloWeb,
-      icon: <Lightbulb className="h-8 w-8" />,
-      category: "digital",
-      isNew: true,
-      features: [
-        "Sitios web responsivos",
-        "E-commerce",
-        "Aplicaciones web",
-        "Diseño UX/UI",
-        "Optimización SEO",
-        "Mantenimiento web"
-      ],
-      benefits: [
-        "Presencia profesional online",
-        "Generación de leads 24/7",
-        "Ventas automatizadas",
-        "Credibilidad empresarial"
-      ]
-    }
+    
   ];
 
   const billingServices = [
@@ -260,6 +217,18 @@ const Services = () => {
           </div>
         </div>
       </section>
+      {/* Feature Modal */}
+      <Dialog open={featureModalOpen} onOpenChange={setFeatureModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{modalTitle}</DialogTitle>
+            <DialogDescription>{modalBody}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => setFeatureModalOpen(false)}>Cerrar</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* Search and Filter */}
       <section className="py-12 bg-background border-b">
@@ -335,12 +304,23 @@ const Services = () => {
                   
                   <div className="space-y-6 mb-8">
                     <div>
-                      <h4 className="font-semibold mb-3 text-primary">Incluye:</h4>
+                      <h4 className="font-semibold mb-3 text-primary">Servicios:</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.features.map((feature, index) => (
-                          <div key={index} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                            {feature}
+                          <div key={index}>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="justify-start w-full text-sm flex items-center"
+                              onClick={() => {
+                                setModalTitle(feature.name);
+                                setModalBody(feature.details || `Detalle de "${feature.name}" en ${service.title}. Para más información contáctanos.`);
+                                setFeatureModalOpen(true);
+                              }}
+                            >
+                              <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                              <span className="text-left">{feature.name}</span>
+                            </Button>
                           </div>
                         ))}
                       </div>
@@ -394,7 +374,16 @@ const Services = () => {
                 </div>
                 <h3 className="font-semibold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-                <Button size="sm" variant="outline" className="w-full">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    setModalTitle(service.title);
+                    setModalBody(service.description || "");
+                    setFeatureModalOpen(true);
+                  }}
+                >
                   Saber Más
                 </Button>
               </Card>

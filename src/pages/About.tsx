@@ -14,6 +14,12 @@ import {
   Shield
 } from "lucide-react";
 
+// team photos
+import franciaImg from "@/assets/francia londono.jpeg";
+import veronicaImg from "@/assets/Veronica Cano.jpeg";
+import juanDiegoImg from "@/assets/Juan Diego Monsalve.jpeg";
+import vanesaImg from "@/assets/vanesa cordoba.jpeg";
+
 const About = () => {
   const values = [
     {
@@ -79,28 +85,32 @@ const About = () => {
 
   const team = [
     {
-      name: "María Fernanda Gómez",
+      name: "Francia Londoño",
       position: "Directora General",
-      speciality: "Administración de Empresas, MBA",
-      experience: "15+ años"
+      speciality: "Contadora pública",
+      experience: "25+ años",
+      image: franciaImg
     },
     {
-      name: "Carlos Alberto Ruiz",
-      position: "Director Financiero",
-      speciality: "Contador Público, Especialista en NIIF",
-      experience: "12+ años"
+      name: "Veronica Cano Castro",
+      position: "Psicologa",
+      speciality: "Psicologa especialista en Poligrafía",
+      experience: "20+ años",
+      image: veronicaImg
     },
     {
-      name: "Ana Lucía Martínez",
-      position: "Directora de Talento Humano",
-      speciality: "Psicología Organizacional",
-      experience: "10+ años"
+      name: "Juan Diego Monsalve",
+      position: "Coach",
+      speciality: "Coach ejecutivo y mentor de negocios",
+      experience: "10+ años",
+      image: juanDiegoImg
     },
     {
-      name: "Roberto Sánchez",
-      position: "Director Jurídico",
-      speciality: "Abogado, Especialista en Derecho Comercial",
-      experience: "14+ años"
+      name: "Vanesa Cordoba",
+      position: "Directora contable",
+      speciality: "Contadora pública",
+      experience: "8+ años",
+      image: vanesaImg
     }
   ];
 
@@ -139,7 +149,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold text-primary">Nuestra Misión</h2>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Acompañar a los emprendedores y empresarios en la consecución de sus objetivos 
+                Acompañar a los empresarios en la consecución de sus objetivos 
                 empresariales, proporcionando soluciones integrales y especializadas que les 
                 permitan enfocarse en su pasión mientras nosotros gestionamos las demás áreas 
                 críticas de su empresa.
@@ -256,8 +266,12 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="p-6 text-center group hover:shadow-xl transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-brand rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
-                  {member.name.split(' ').map(n => n[0]).join('')}
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
                 <p className="text-primary font-medium mb-2">{member.position}</p>
@@ -337,7 +351,7 @@ const About = () => {
               </Card>
               
               <Card className="p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                <div className="text-3xl font-bold text-primary mb-2">10+</div>
                 <p className="text-sm text-muted-foreground">Profesionales</p>
               </Card>
               

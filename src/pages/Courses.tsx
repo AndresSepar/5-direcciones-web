@@ -47,7 +47,7 @@ const Courses = () => {
     {
       id: 1,
       title: "Fundamentos de Administración Empresarial",
-      description: "Aprende los conceptos básicos para una gestión administrativa eficiente y moderna.",
+      description: "Aún no disponible.",
       category: "administrativa",
       level: "Básico",
       duration: "8 horas",
@@ -66,7 +66,7 @@ const Courses = () => {
     {
       id: 2,
       title: "Contabilidad bajo NIIF para PYMES",
-      description: "Domina las Normas Internacionales de Información Financiera aplicadas a pequeñas y medianas empresas.",
+      description: "Aún no disponible.",
       category: "contable",
       level: "Intermedio",
       duration: "12 horas",
@@ -85,7 +85,7 @@ const Courses = () => {
     {
       id: 3,
       title: "Gestión Ágil de Proyectos",
-      description: "Metodologías ágiles para la gestión efectiva de proyectos empresariales.",
+      description: "Aún no disponible.",
       category: "proyectos",
       level: "Avanzado",
       duration: "10 horas",
@@ -101,104 +101,7 @@ const Courses = () => {
         "Cierre de proyectos"
       ]
     },
-    {
-      id: 4,
-      title: "Gestión Estratégica del Talento Humano",
-      description: "Estrategias modernas para atraer, desarrollar y retener el mejor talento.",
-      category: "talento",
-      level: "Intermedio",
-      duration: "9 horas",
-      students: 203,
-      rating: 4.8,
-      price: "$170.000",
-      image: talentoHumano,
-      instructor: "Ana Lucía Martínez",
-      modules: [
-        "Reclutamiento 4.0",
-        "Evaluación de desempeño",
-        "Desarrollo organizacional",
-        "Compensación y beneficios"
-      ]
-    },
-    {
-      id: 5,
-      title: "Aspectos Jurídicos para Empresarios",
-      description: "Todo lo que necesitas saber sobre el marco legal empresarial en Colombia.",
-      category: "juridica",
-      level: "Básico",
-      duration: "6 horas",
-      students: 178,
-      rating: 4.6,
-      price: "$130.000",
-      image: direccionJuridica,
-      instructor: "Dr. Roberto Sánchez",
-      modules: [
-        "Constitución de empresas",
-        "Contratos comerciales",
-        "Derecho laboral",
-        "Propiedad intelectual"
-      ]
-    },
-    {
-      id: 6,
-      title: "Marketing Digital para Empresas",
-      description: "Estrategias digitales para hacer crecer tu negocio en el mundo online.",
-      category: "marketing",
-      level: "Intermedio",
-      duration: "15 horas",
-      students: 312,
-      rating: 4.9,
-      price: "$250.000",
-      image: marketingDigital,
-      instructor: "Laura Vélez",
-      isNew: true,
-      modules: [
-        "Estrategia digital",
-        "SEO y SEM",
-        "Redes sociales",
-        "Email marketing",
-        "Publicidad digital"
-      ]
-    },
-    {
-      id: 7,
-      title: "Desarrollo Web para Empresarios",
-      description: "Aprende a crear y gestionar sitios web profesionales sin conocimientos técnicos avanzados.",
-      category: "desarrollo",
-      level: "Básico",
-      duration: "12 horas",
-      students: 98,
-      rating: 4.7,
-      price: "$200.000",
-      image: desarrolloWeb,
-      instructor: "Andrés Morales",
-      isNew: true,
-      modules: [
-        "Fundamentos web",
-        "WordPress avanzado",
-        "E-commerce básico",
-        "SEO técnico"
-      ]
-    },
-    {
-      id: 8,
-      title: "Facturación Electrónica en Colombia",
-      description: "Implementación completa del sistema de facturación electrónica según la DIAN.",
-      category: "facturacion",
-      level: "Intermedio",
-      duration: "8 horas",
-      students: 267,
-      rating: 4.8,
-      price: "$160.000",
-      image: cursosFormacion,
-      instructor: "Patricia López",
-      modules: [
-        "Normatividad DIAN",
-        "Implementación técnica",
-        "Documentos electrónicos",
-        "Resolución de problemas"
-      ]
-    }
+   
   ];
 
   const filteredCourses = courses.filter(course => {
@@ -245,16 +148,7 @@ const Courses = () => {
             con certificación al completar cada módulo.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="btn-hero">
-              <BookOpen className="mr-2 h-5 w-5" />
-              Explorar Cursos
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Video className="mr-2 h-5 w-5" />
-              Ver Demo
-            </Button>
-          </div>
+         
         </div>
       </section>
 
@@ -301,11 +195,11 @@ const Courses = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">10+</div>
               <p className="text-muted-foreground">Cursos Disponibles</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-accent mb-2">1,200+</div>
+              <div className="text-3xl font-bold text-accent mb-2">10+</div>
               <p className="text-muted-foreground">Estudiantes Activos</p>
             </div>
             <div>
@@ -452,7 +346,7 @@ const Courses = () => {
             ¿Listo para Impulsar tu Carrera?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Únete a más de 1,200 profesionales que ya están transformando sus empresas 
+            Únete a más de 50 profesionales que ya están transformando sus empresas 
             con nuestros cursos especializados.
           </p>
           
@@ -462,9 +356,7 @@ const Courses = () => {
               Comenzar Ahora
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Ver Catálogo Completo
-            </Button>
+            
           </div>
         </div>
       </section>
