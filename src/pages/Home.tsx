@@ -128,7 +128,7 @@ const Home = () => {
     {
       name: "Fernando Hernandez",
       company: "Propietario de Granfer Percheros y Repisas",
-      text: "Con 5 Direcciones implementé facturación electrónica en 48 horas. Ahora facturo desde el celular y nunca pierdo una venta.",
+      text: "Con 5 Direcciones implementé facturación electrónica en 4 horas. Ahora facturo desde el celular y nunca pierdo una venta.",
       rating: 5
     }
   ];

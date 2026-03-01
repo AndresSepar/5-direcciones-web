@@ -494,7 +494,7 @@ const Entrepreneurship = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
               <a 
-                href="https://api.whatsapp.com/send?phone=573223674992&text=Hola,%20quiero%20ser%20representante%20de%205%20Direcciones"
+                href="https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20quiero%20ser%20representante%20de%205%20Direcciones"
                 target="_blank"
                 rel="noopener noreferrer"
               >
