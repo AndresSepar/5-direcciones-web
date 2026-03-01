@@ -45,62 +45,62 @@ const Courses = () => {
 
   const courses = [
     {
-      id: 1,
-      title: "Fundamentos de Administración Empresarial",
-      description: "Aún no disponible.",
-      category: "administrativa",
-      level: "Básico",
-      duration: "8 horas",
-      students: 245,
-      rating: 4.8,
-      price: "$150.000",
-      image: direccionAdministrativa,
-      instructor: "María Fernanda Gómez",
-      modules: [
-        "Introducción a la administración",
-        "Planificación estratégica",
-        "Organización empresarial",
-        "Control de gestión"
-      ]
-    },
-    {
-      id: 2,
-      title: "Contabilidad bajo NIIF para PYMES",
-      description: "Aún no disponible.",
-      category: "contable",
-      level: "Intermedio",
-      duration: "12 horas",
-      students: 189,
-      rating: 4.9,
-      price: "$220.000",
-      image: direccionContable,
-      instructor: "Carlos Alberto Ruiz",
-      modules: [
-        "Marco conceptual NIIF",
-        "Estados financieros",
-        "Reconocimiento y medición",
-        "Presentación y revelación"
-      ]
-    },
-    {
-      id: 3,
-      title: "Gestión Ágil de Proyectos",
-      description: "Aún no disponible.",
-      category: "proyectos",
-      level: "Avanzado",
-      duration: "10 horas",
-      students: 156,
-      rating: 4.7,
-      price: "$180.000",
-      image: gestionProyectos,
-      instructor: "Roberto Sánchez",
-      modules: [
-        "Metodologías ágiles",
-        "Scrum y Kanban",
-        "Gestión de riesgos",
-        "Cierre de proyectos"
-      ]
-    },
+  "id": 1,
+  "title": "Creación de Contenido para Empresas con Canva",
+  "description": "Aprende a diseñar publicaciones profesionales para redes sociales sin experiencia previa usando Canva.",
+  "category": "digital",
+  "level": "Básico",
+  "duration": "6 horas",
+  "students": 189,
+  "rating": 4.9,
+  "price": "$120.000",
+  "image": marketingDigital,
+  "instructor": "María Fernanda Gómez",
+  "modules": [
+    "Interfaz de Canva para principiantes",
+    "Plantillas para redes sociales",
+    "Creación de carruseles impactantes",
+    "Exportación y programación"
+  ]
+},
+{
+  "id": 2,
+  "title": "Creación de Sitios Web sin Saber Programar",
+  "description": "Lanza tu página web profesional en 1 día usando herramientas no-code.",
+  "category": "digital",
+  "level": "Básico",
+  "duration": "8 horas",
+  "students": 212,
+  "rating": 4.7,
+  "price": "$660.000",
+  "image": desarrolloWeb,
+  "instructor": "María Fernanda Gómez",
+  "modules": [
+    "Configuración de IA",
+    "Diseño con Lovable",
+    "Optimización para móviles",
+    "Conexión de dominio y hosting"
+  ]
+},
+{
+  "id": 3,
+  "title": "Gestión de Redes Sociales para Emprendedores",
+  "description": "Domina Instagram y Facebook para generar ventas diarias desde tus publicaciones.",
+  "category": "digital",
+  "level": "Intermedio",
+  "duration": "10 horas",
+  "students": 267,
+  "rating": 4.8,
+  "price": "$160.000",
+  "image": gestionProyectos,
+  "instructor": "María Fernanda Gómez",
+  "modules": [
+    "Estrategia de contenido mensual",
+    "Historias que convierten",
+    "Publicidad orgánica efectiva",
+    "Análisis de resultados reales"
+  ]
+},
    
   ];
 
