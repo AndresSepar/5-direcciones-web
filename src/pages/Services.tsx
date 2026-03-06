@@ -469,7 +469,7 @@ const Services = () => {
             
             <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary" asChild>
               <a 
-                href="https://api.whatsapp.com/send?phone=573223674992&text=Hola,%20tengo%20una%20consulta"
+                href="https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20tengo%20una%20consulta"
                 target="_blank"
                 rel="noopener noreferrer"
               >

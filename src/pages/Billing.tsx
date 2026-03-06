@@ -242,7 +242,7 @@ const Billing = () => {
                 
                 <Button className="w-full mt-6 group-hover:bg-primary/90 transition-colors" asChild>
                   <a 
-                    href="https://api.whatsapp.com/send?phone=573223674992&text=Hola,%20tengo%20una%20consulta%20sobre%20facturación%20electrónica"
+                    href="https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20tengo%20una%20consulta%20sobre%20facturación%20electrónica"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
