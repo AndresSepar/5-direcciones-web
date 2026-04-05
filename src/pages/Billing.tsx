@@ -347,6 +347,54 @@ const Billing = () => {
         </div>
       </section>
 
+      {/* Folios Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              ¿Cómo funcionan los folios de facturación?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Con el respaldo contable y tecnológico de 5 Direcciones, emitir tus documentos ante la DIAN es rápido y seguro.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="p-8 text-center hover:drop-shadow-lg transition-all duration-300 group">
+              <FileText className="h-16 w-16 mx-auto mb-6 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-semibold mb-4">¿Qué es un folio?</h3>
+              <p className="text-muted-foreground">
+                Cada folio equivale a un documento electrónico procesado con éxito, ya sea una Factura Electrónica de venta, una Nota Crédito o una Nota Débito, incluyendo su archivo XML oficial.
+              </p>
+            </Card>
+
+            <Card className="p-8 text-center hover:drop-shadow-lg transition-all duration-300 group">
+              <Shield className="h-16 w-16 mx-auto mb-6 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-semibold mb-4">Cumplimiento DIAN 100%</h3>
+              <p className="text-muted-foreground">
+                Te apoyamos con la gestión, autorización y asociación de los rangos de numeración y resoluciones de facturación exigidos por la ley.
+              </p>
+            </Card>
+
+            <Card className="p-8 text-center hover:drop-shadow-lg transition-all duration-300 group">
+              <Cloud className="h-16 w-16 mx-auto mb-6 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-semibold mb-4">Plataforma Web Centralizada</h3>
+              <p className="text-muted-foreground">
+                Todos tus folios se administran desde una plataforma estable, con el acompañamiento en marketing y contabilidad de 5 Direcciones.
+              </p>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="secondary" size="lg" asChild>
+              <a href="https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20quiero%20hablar%20con%20un%20asesor%20contable" target="_blank" rel="noopener noreferrer">
+                Hablar con un asesor contable
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="py-20">
         <div className="container mx-auto px-4">
