@@ -172,6 +172,25 @@ const Billing = () => {
     }
   ];
 
+  const documentosElectronicos = [
+    { folios: 12, price: "$50.000" },
+    { folios: 25, price: "$92.900" },
+    { folios: 50, price: "$109.900" },
+    { folios: 100, price: "$169.900" },
+    { folios: 200, price: "$255.900" },
+    { folios: 400, price: "$383.900" },
+    { folios: 500, price: "$429.900" },
+    { folios: 1000, price: "$642.900" },
+    { folios: 2500, price: "$1.342.900" },
+    { folios: 5000, price: "$2.347.900" },
+    { folios: 10000, price: "$4.279.900" },
+    { folios: 15000, price: "$6.253.900" },
+    { folios: 20000, price: "$8.142.900" },
+    { folios: 25000, price: "$9.822.900" },
+    { folios: 50000, price: "$18.636.900" },
+    { folios: 100000, price: "$33.442.900" }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -395,43 +414,46 @@ const Billing = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20">
+      {/* Documentos Electrónicos */}
+      <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary/10 text-primary">
-              Proceso de Implementación
+            <Badge className="mb-4 bg-accent/10 text-accent">
+              Documentos Electrónicos
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Implementación Rápida y Sencilla
+              Documentos Electrónicos
             </h2>
-            <p className="text-xl text-muted-foreground">
-              En solo 4 pasos tendrás tu sistema de facturación electrónica funcionando
+            <p className="text-xl text-muted-foreground mb-4">
+              Con este paquete podrás emitir facturas electrónicas, activar tu buzón tributario y generar eventos título valor.
             </p>
+            <div className="text-sm text-muted-foreground space-y-1">
+              <p>* Precios netos * Soporte técnico incluido</p>
+              <p>* Los paquetes con hasta 1.000 folios tienen vigencia de 1 año.</p>
+              <p>* Los paquetes con más de 1.000 folios tienen vigencia de 2 años.</p>
+              <p>* El tiempo de vigencia inicia a partir de la fecha de activación del paquete.</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-brand rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
-                  {item.step}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {documentosElectronicos.map((plan, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold mb-2">{plan.folios} folios</h3>
+                  <div className="text-3xl font-bold text-primary mb-4">{plan.price} COP</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
+                
+                <Button className="w-full" asChild>
+                  <a 
+                    href={`https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20quiero%20comprar%20${plan.folios}%20folios%20de%20documentos%20electrónicos%20por%20${plan.price}%20COP`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Comprar
+                  </a>
+                </Button>
+              </Card>
             ))}
-          </div>
-          {/* Botón de cotización en WhatsApp */}
-          <div className="mt-12 text-center">
-            <Button size="lg" className="btn-hero" asChild>
-              <a
-                href="https://api.whatsapp.com/send?phone=573013936616&text=Cotiza%20con%20nosotros%20el%20proceso%20de%20implementaci%C3%B3n"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Cotiza con nosotros el proceso de implementación
-              </a>
-            </Button>
           </div>
         </div>
       </section>
