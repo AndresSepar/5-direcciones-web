@@ -1,7 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { 
   FileText, 
   Upload, 
@@ -190,6 +192,109 @@ const Billing = () => {
     { folios: 50000, price: "$18.636.900" },
     { folios: 100000, price: "$33.442.900" }
   ];
+
+  const [activeTab, setActiveTab] = useState('documentos');
+
+  const productData = {
+    documentos: {
+      title: "Documentos Electrónicos",
+      subtitle: "Con este paquete podrás emitir facturas electrónicas, notas debito y notas crédito, activar tu buzón tributario y generar eventos título valor.",
+      legal: "* Precios netos * Soporte técnico incluido * Los paquetes con hasta 1.000 folios tienen vigencia de 1 año. * Los paquetes con más de 1.000 folios tienen vigencia de 2 años. * El tiempo de vigencia inicia a partir de la fecha de activación del paquete.",
+      plans: documentosElectronicos
+    },
+    nomina: {
+      title: "Nómina Electrónica",
+      subtitle: "Nómina. Con este paquete podrás emitir los documentos soporte de nómina electrónica de tus empleados.",
+      legal: "* Precios netos * Soporte técnico incluido * Los paquetes con hasta 1.000 folios tienen vigencia de 1 año. * Los paquetes con más de 1.000 folios tienen vigencia de 2 años. * El tiempo de vigencia inicia a partir de la fecha de activación del paquete.",
+      plans: [
+        { folios: 12, price: "$50.000" },
+        { folios: 25, price: "$92.900" },
+        { folios: 36, price: "$100.900" },
+        { folios: 48, price: "$105.900" },
+        { folios: 50, price: "$109.900" },
+        { folios: 60, price: "$122.900" },
+        { folios: 72, price: "$132.900" },
+        { folios: 84, price: "$146.900" },
+        { folios: 96, price: "$165.900" },
+        { folios: 100, price: "$169.900" },
+        { folios: 108, price: "$180.900" },
+        { folios: 120, price: "$193.900" },
+        { folios: 200, price: "$255.900" },
+        { folios: 240, price: "$293.900" },
+        { folios: 400, price: "$383.900" },
+        { folios: 500, price: "$429.900" },
+        { folios: 1000, price: "$642.900" },
+        { folios: 2500, price: "$1.342.900" },
+        { folios: 5000, price: "$2.347.900" },
+        { folios: 10000, price: "$4.279.900" },
+        { folios: 15000, price: "$6.253.900" },
+        { folios: 20000, price: "$8.142.900" },
+        { folios: 25000, price: "$9.822.900" },
+        { folios: 30000, price: "$11.472.900" },
+        { folios: 50000, price: "$18.636.900" },
+        { folios: 100000, price: "$33.442.900" }
+      ]
+    },
+    soporte: {
+      title: "Documentos Soporte Electrónico",
+      subtitle: "Con estos paquetes podrás generar los documento soporte electrónico de todos tus proveedores.",
+      legal: "* Precios netos * Soporte técnico incluido * Los paquetes con hasta 1.000 folios tienen vigencia de 1 año. * Los paquetes con más de 1.000 folios tienen vigencia de 2 años. * El tiempo de vigencia inicia a partir de la fecha de activación del paquete.",
+      plans: [
+        { folios: 12, price: "$50.000" },
+        { folios: 25, price: "$92.900" },
+        { folios: 50, price: "$109.900" },
+        { folios: 100, price: "$169.900" },
+        { folios: 200, price: "$255.900" },
+        { folios: 400, price: "$383.900" },
+        { folios: 500, price: "$429.900" },
+        { folios: 1000, price: "$642.900" },
+        { folios: 2500, price: "$1.342.900" },
+        { folios: 5000, price: "$2.347.900" },
+        { folios: 10000, price: "$4.279.900" },
+        { folios: 20000, price: "$8.142.900" },
+        { folios: 30000, price: "$11.472.900" }
+      ]
+    },
+    implementaciones: {
+      title: "Implementaciones",
+      subtitle: "Con estos paquetes podrás acceder a la implementación de procesos de nuestra plataforma, de manera personalizada.",
+      legal: "* Precios netos * Soporte técnico incluido * Los paquetes con hasta 1.000 folios tienen vigencia de 1 año. * Los paquetes con más de 1.000 folios tienen vigencia de 2 años. * El tiempo de vigencia inicia a partir de la fecha de activación del paquete.",
+      plans: [
+        { name: "Habilitación de resolución", price: "$60.000" },
+        { name: "Implementación intermedio factura", price: "$220.000" },
+        { name: "Implementación Premium Factura", price: "$300.000" },
+        { name: "Implementación Básico Nómina", price: "$150.000" },
+        { name: "Implementación Intermedio Nómina", price: "$220.000" },
+        { name: "Implementación Premium Nómina", price: "$300.000" },
+        { name: "Combo Intermedio Implementación", price: "$300.000" },
+        { name: "Combo Premium Implementación", price: "$430.000" },
+        { name: "Implementación Doc. Soporte Electrónico", price: "$100.000" },
+        { name: "Implementación Intermedio Buzón Tributario - Cliente nuevo", price: "$220.000" },
+        { name: "Implementación Premium Buzón Tributario - Cliente nuevo", price: "$300.000" },
+        { name: "Implementación Buzón Tributario - Cliente Factiratech", price: "$100.000" }
+      ]
+    }
+  };
+
+  const generateWhatsAppMessage = (paquete, categoria, precio) => {
+    const categoriaNombre = {
+      documentos: "Documentos Electrónicos",
+      nomina: "Nómina Electrónica",
+      soporte: "Documento Soporte Electrónico",
+      implementaciones: "Implementaciones"
+    }[categoria];
+
+    let paqueteTexto;
+    if (categoria === 'implementaciones') {
+      paqueteTexto = paquete;
+    } else if (categoria === 'soporte') {
+      paqueteTexto = `${paquete} folios de Doc. Soporte Electrónico`;
+    } else {
+      paqueteTexto = `${paquete} folios de ${categoriaNombre}`;
+    }
+
+    return `Hola, quiero comprar ${paqueteTexto} por ${precio} COP`;
+  };
 
   return (
     <div className="min-h-screen">
@@ -414,47 +519,61 @@ const Billing = () => {
         </div>
       </section>
 
-      {/* Documentos Electrónicos */}
+      {/* Servicios Multi-Producto */}
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-accent/10 text-accent">
-              Documentos Electrónicos
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Documentos Electrónicos
-            </h2>
-            <p className="text-xl text-muted-foreground mb-4">
-              Con este paquete podrás emitir facturas electrónicas, activar tu buzón tributario y generar eventos título valor.
-            </p>
-            <div className="text-sm text-muted-foreground space-y-1">
-              <p>* Precios netos * Soporte técnico incluido</p>
-              <p>* Los paquetes con hasta 1.000 folios tienen vigencia de 1 año.</p>
-              <p>* Los paquetes con más de 1.000 folios tienen vigencia de 2 años.</p>
-              <p>* El tiempo de vigencia inicia a partir de la fecha de activación del paquete.</p>
-            </div>
-          </div>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-8">
+              <TabsTrigger value="documentos">Documentos Electrónicos</TabsTrigger>
+              <TabsTrigger value="nomina">Nómina Electrónica</TabsTrigger>
+              <TabsTrigger value="soporte">Documento Soporte Electrónico</TabsTrigger>
+              <TabsTrigger value="implementaciones">Implementaciones</TabsTrigger>
+            </TabsList>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {documentosElectronicos.map((plan, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold mb-2">{plan.folios} folios</h3>
-                  <div className="text-3xl font-bold text-primary mb-4">{plan.price} COP</div>
+            {Object.entries(productData).map(([key, data]) => (
+              <TabsContent key={key} value={key}>
+                <div className="text-center mb-16">
+                  <Badge className="mb-4 bg-accent/10 text-accent">
+                    {data.title}
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                    {data.title}
+                  </h2>
+                  <p className="text-xl text-muted-foreground mb-4">
+                    {data.subtitle}
+                  </p>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p>{data.legal.split('*').filter(line => line.trim()).map((line, index) => (
+                      <span key={index}>* {line.trim()}<br /></span>
+                    ))}</p>
+                  </div>
                 </div>
-                
-                <Button className="w-full" asChild>
-                  <a 
-                    href={`https://api.whatsapp.com/send?phone=573013936616&text=Hola,%20quiero%20comprar%20${plan.folios}%20folios%20de%20documentos%20electrónicos%20por%20${plan.price}%20COP`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Comprar
-                  </a>
-                </Button>
-              </Card>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                  {data.plans.map((plan, index) => (
+                    <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300">
+                      <div className="text-center mb-6">
+                        <h3 className="text-xl font-bold mb-2">
+                          {plan.folios ? `${plan.folios} folios` : plan.name}
+                        </h3>
+                        <div className="text-3xl font-bold text-primary mb-4">{plan.price} COP</div>
+                      </div>
+                      
+                      <Button className="w-full" asChild>
+                        <a 
+                          href={`https://api.whatsapp.com/send?phone=573013936616&text=${encodeURIComponent(generateWhatsAppMessage(plan.folios || plan.name, key, plan.price))}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Comprar
+                        </a>
+                      </Button>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 
