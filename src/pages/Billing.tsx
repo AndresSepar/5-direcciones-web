@@ -115,7 +115,7 @@ const Billing = () => {
     {
       name: "Con Todo",
       price: "$189.900",
-      period: "Vigencia 2 años",
+      period: "Vigencia 1 año",
       description: "Es el paquete que necesitas para empezar a gestionar tu negocio de la mejor manera.",
       features: [
         "50 folios para facturación electrónica, buzón tributario y eventos de título valor",
@@ -127,7 +127,7 @@ const Billing = () => {
     {
       name: "Con todo PRO",
       price: "$309.900",
-      period: "Vigencia 2 años",
+      period: "Vigencia 1 año",
       description: "Es el paquete ideal para empresas en crecimiento que necesitan una solución completa y escalable.",
       features: [
         "200 folios para facturación electrónica, buzón tributario y eventos de título valor",
@@ -139,7 +139,7 @@ const Billing = () => {
     {
       name: "Con todo MAX",
       price: "$699.900",
-      period: "Vigencia 2 años",
+      period: "Vigencia 1 año",
       description: "El mejor plan para gestionar tu negocio",
       features: [
         "600 folios para facturación electrónica, buzón tributario y eventos de título valor",
