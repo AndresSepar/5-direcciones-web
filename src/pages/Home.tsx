@@ -221,15 +221,14 @@ ${formData.mensaje}
           </Badge>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            Impulsa tu empresa con
+            Emprende desde tu 
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">
-              5 Direcciones
+              fuerza interior
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-            Acompañamos a empresarios en la consecución de sus objetivos empresariales 
-            con soluciones integrales y especializadas.
+            Un programa transformador para personas que tienen una idea de negocio y desean estructurarla desde su autenticidad, confianza y acción sostenible.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -238,7 +237,7 @@ ${formData.mensaje}
               className="btn-hero text-lg px-8 py-4"
               onClick={() => openWhatsApp("Hola, me interesa una consulta gratuita sobre los servicios de 5 Direcciones")}
             >
-              Consulta Gratuita
+              Ver más
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
