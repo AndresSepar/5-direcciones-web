@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -232,16 +233,12 @@ ${formData.mensaje}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="btn-hero text-lg px-8 py-4"
-              onClick={() => openWhatsApp("Hola, me interesa una consulta gratuita sobre los servicios de 5 Direcciones")}
-            >
-              Ver más
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="btn-hero text-lg px-8 py-4" asChild>
+              <Link to="/emprende#emprende">
+                Ver más
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            
-           
           </div>
           
           {/* Stats */}

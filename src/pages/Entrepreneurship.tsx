@@ -537,48 +537,185 @@ const Entrepreneurship = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20">
+      {/* ========================================== */}
+      {/* SECCIÓN: Emprende desde tu fuerza interior */}
+      {/* Reemplaza la sección previa "Proceso de Selección" por el contenido del programa */}
+      {/* Mantiene la estética y componentes existentes (Badge, Card, grid) */}
+      <section id="emprende" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-accent/10 text-accent">
-              Proceso de Selección
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Cómo Unirte a Nuestro Equipo
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Proceso sencillo y transparente para convertirte en nuestro representante
+          {/* HERO interno */}
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-accent/10 text-accent">Emprende</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Emprende desde tu fuerza interior</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Un programa transformador para personas que tienen una idea de negocio y desean estructurarla desde su autenticidad, confianza y acción sostenible.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-brand hidden lg:block"></div>
-              
-              {process.map((item, index) => (
-                <div key={index} className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'lg:flex-row-reverse' : ''
-                }`}>
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center text-white font-bold hidden lg:flex">
-                    {item.step}
-                  </div>
-                  
-                  {/* Content */}
-                  <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:text-right lg:pr-8' : 'lg:pl-8'}`}>
-                    <Card className="p-6">
-                      <div className="lg:hidden w-12 h-12 bg-accent rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-bold mb-4">
-                        {item.step}
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </Card>
-                  </div>
-                </div>
-              ))}
+          {/* Nuestro propósito */}
+          <div className="max-w-3xl mx-auto text-center mb-12 px-4 py-8 bg-gradient-subtle rounded-lg">
+            <h3 className="text-2xl font-semibold mb-3">Nuestro propósito</h3>
+            <p className="text-muted-foreground mb-2">
+              Acompañar a los participantes a transformar su visión emprendedora en una propuesta concreta, alineada con sus talentos, identidad y capacidades.
+            </p>
+            <p className="text-muted-foreground">
+              Generamos un plan de acción consciente y sostenible que conecta la visión personal con la realidad del negocio.
+            </p>
+          </div>
+
+          {/* El viaje emprendedor - 5 módulos */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h4 className="text-xl font-semibold">El viaje emprendedor</h4>
+              <p className="text-muted-foreground">Cinco módulos para convertir una idea en una propuesta concreta y sostenible.</p>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6">
+                <h5 className="text-lg font-semibold mb-2">Activa tu fuerza</h5>
+                <p className="text-muted-foreground mb-3">Despierta tu potencial emprendedor.</p>
+                <p className="text-sm text-muted-foreground">Rompe los bloqueos, identifica y transforma miedos y creencias limitantes para activar la confianza necesaria.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="text-lg font-semibold mb-2">Rompe los bloqueos</h5>
+                <p className="text-muted-foreground mb-3">Identifica y supera barreras mentales.</p>
+                <p className="text-sm text-muted-foreground">Herramientas prácticas para reconocer bloqueos y crear hábitos que impulsan la acción.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="text-lg font-semibold mb-2">Da forma a tu idea</h5>
+                <p className="text-muted-foreground mb-3">Clarifica la propuesta de valor.</p>
+                <p className="text-sm text-muted-foreground">Estructuramos la propuesta desde la autenticidad, conectando talento y mercado.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="text-lg font-semibold mb-2">Diseña tu modelo</h5>
+                <p className="text-muted-foreground mb-3">Define estructura y monetización.</p>
+                <p className="text-sm text-muted-foreground">Diseño sencillo del modelo de negocio, canales y formas de generación de valor.</p>
+              </Card>
+
+              <Card className="p-6 md:col-span-2">
+                <h5 className="text-lg font-semibold mb-2">Planifica y lanza</h5>
+                <p className="text-muted-foreground mb-3">Acción consciente hacia el mercado.</p>
+                <p className="text-sm text-muted-foreground">Plan de acción claro, pasos inmediatos y acompañamiento en el lanzamiento inicial.</p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Bloque ampliación del recorrido emprendedor - áreas de apoyo */}
+          <div className="mb-12">
+            <div className="text-center mb-6">
+              <h4 className="text-xl font-semibold">Áreas de apoyo</h4>
+              <p className="text-muted-foreground">Apoyos que fortalecen la ruta emprendedora dentro de la mirada de 5 Direcciones.</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Jurídico</h5>
+                <p className="text-sm text-muted-foreground">Formalidades para la constitución desde la actividad económica.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Contable</h5>
+                <p className="text-sm text-muted-foreground">Contabilidad para mi negocio desde mi especialidad.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Talento humano</h5>
+                <p className="text-sm text-muted-foreground">Identifico las capacidades de otros para que acompañen mi propósito.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Estrategia digital</h5>
+                <p className="text-sm text-muted-foreground">Conecto con mi comunidad a través de las herramientas de difusión.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Conexión</h5>
+                <p className="text-sm text-muted-foreground">Extensión de mi negocio hacia nuevos mercados.</p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Metodología */}
+          <div className="mb-12">
+            <div className="text-center mb-6">
+              <h4 className="text-xl font-semibold">Metodología</h4>
+              <p className="text-muted-foreground">El acompañamiento se lleva a cabo con base en técnicas innovadoras y transformadoras.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Coaching y neuro entrenamiento</h5>
+                <p className="text-sm text-muted-foreground">Técnicas de coaching y neuro entrenamiento para el desarrollo personal y profesional.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Métodos vivenciales</h5>
+                <p className="text-sm text-muted-foreground">Métodos vivenciales, disruptivos y ejercicios introspectivos para la transformación profunda.</p>
+              </Card>
+
+              <Card className="p-6">
+                <h5 className="font-semibold mb-2">Aprendizaje activo</h5>
+                <p className="text-sm text-muted-foreground">Storytelling, gamificación y aprendizaje basado en retos para una experiencia inmersiva.</p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Estructura del programa - mini tarjetas */}
+          <div className="mb-12">
+            <div className="text-center mb-6">
+              <h4 className="text-xl font-semibold">Estructura del programa</h4>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <Card className="p-6 text-center">
+                <div className="text-lg font-semibold mb-2">Duración</div>
+                <div className="text-muted-foreground">2 horas x módulo</div>
+              </Card>
+
+              <Card className="p-6 text-center">
+                <div className="text-lg font-semibold mb-2">Modalidad</div>
+                <div className="text-muted-foreground">Presencial</div>
+              </Card>
+
+              <Card className="p-6 text-center">
+                <div className="text-lg font-semibold mb-2">Entregable</div>
+                <div className="text-muted-foreground">Material de trabajo</div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Resultados esperados */}
+          <div className="mb-12">
+            <div className="text-center mb-6">
+              <h4 className="text-xl font-semibold">Resultados esperados</h4>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <Card className="p-6">
+                <p className="font-semibold mb-2">Fortalecimiento del autoconcepto y mentalidad emprendedora.</p>
+              </Card>
+
+              <Card className="p-6">
+                <p className="font-semibold mb-2">Claridad sobre la propuesta y modelo de negocio.</p>
+              </Card>
+
+              <Card className="p-6">
+                <p className="font-semibold mb-2">Plan de acción claro y sostenible.</p>
+              </Card>
+
+              <Card className="p-6">
+                <p className="font-semibold mb-2">Herramientas concretas para avanzar y tomar decisiones.</p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Cierre */}
+          <div className="text-center mt-8">
+            <h3 className="text-2xl font-bold mb-3">Transforma tu visión emprendedora</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Da el siguiente paso y estructura tu negocio desde la autenticidad, la confianza y la acción consciente.</p>
           </div>
         </div>
       </section>
