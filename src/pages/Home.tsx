@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -234,10 +233,14 @@ ${formData.mensaje}
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="btn-hero text-lg px-8 py-4" asChild>
-              <Link to="/emprende#emprende">
+              <a
+                href="https://www.youtube.com/shorts/hdU1D9oSW0k"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Ver más
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
           
