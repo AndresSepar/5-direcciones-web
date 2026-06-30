@@ -6,9 +6,20 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 const Blog = () => {
   const articles = [
     {
+      id: 6,
+      title: "Nómina en julio de 2026: el mes en que las empresas deben recalibrar jornada, descansos y costo laboral",
+      excerpt:
+        "Julio de 2026 exige revisar jornada máxima, festivos, recargos y políticas internas para evitar errores de liquidación, turnos y costo laboral en Colombia.",
+      date: "2026-06-25",
+      author: "5 Direcciones",
+      category: "Nómina",
+      href: "https://www.linkedin.com/pulse/n%C3%B3mina-en-julio-de-2026-el-mes-que-las-empresas-deben-r74ze/?trackingId=v%2FAolTm9eDr6uv8HH2S6Ig%3D%3D"
+    },
+    {
       id: 1,
       title: "Falta de liquidez: cómo usar el Radian y factoring para fortalecer tu flujo de caja",
-      excerpt: "Estrategias prácticas para transformar la falta de liquidez en una oportunidad de crecimiento y mantener tu operación activa sin perder control financiero.",
+      excerpt:
+        "Estrategias prácticas para transformar la falta de liquidez en una oportunidad de crecimiento y mantener tu operación activa sin perder control financiero.",
       date: "2026-06-08",
       author: "5 Direcciones",
       category: "Finanzas",
@@ -17,7 +28,8 @@ const Blog = () => {
     {
       id: 2,
       title: "Retención en la fuente 2026 en Colombia: qué cambió tras la suspensión del Decreto 572 de 2025",
-      excerpt: "Actualizamos los puntos clave para las empresas frente a los cambios de retención en la fuente y cómo ajustar sus procesos contables y tributarios.",
+      excerpt:
+        "Actualizamos los puntos clave para las empresas frente a los cambios de retención en la fuente y cómo ajustar sus procesos contables y tributarios.",
       date: "2026-05-22",
       author: "5 Direcciones",
       category: "Tributario",
@@ -26,7 +38,8 @@ const Blog = () => {
     {
       id: 3,
       title: "El costo oculto del desorden administrativo: cómo impacta la salud mental",
-      excerpt: "Una gestión desordenada no solo afecta procesos: también desgasta al equipo, genera estrés y aumenta el riesgo de errores críticos.",
+      excerpt:
+        "Una gestión desordenada no solo afecta procesos: también desgasta al equipo, genera estrés y aumenta el riesgo de errores críticos.",
       date: "2026-04-30",
       author: "5 Direcciones",
       category: "Administrativo",
@@ -35,7 +48,8 @@ const Blog = () => {
     {
       id: 4,
       title: "La gestión administrativa es un gasto: lo que evita una empresa inteligente",
-      excerpt: "Descubre por qué una buena gestión administrativa es una inversión en estabilidad, eficiencia y crecimiento sostenido.",
+      excerpt:
+        "Descubre por qué una buena gestión administrativa es una inversión en estabilidad, eficiencia y crecimiento sostenido.",
       date: "2026-04-12",
       author: "5 Direcciones",
       category: "Gestión",
@@ -44,7 +58,8 @@ const Blog = () => {
     {
       id: 5,
       title: "Inclusión laboral de personas con discapacidad: más que cumplimiento",
-      excerpt: "Un enfoque empresarial que impulsa la diversidad, mejora la reputación y fortalece la productividad de las organizaciones.",
+      excerpt:
+        "Un enfoque empresarial que impulsa la diversidad, mejora la reputación y fortalece la productividad de las organizaciones.",
       date: "2026-03-18",
       author: "5 Direcciones",
       category: "Talento Humano",
@@ -52,9 +67,16 @@ const Blog = () => {
     }
   ];
 
-  const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const featuredArticle = articles.find((article) => article.category === "Tributario") ?? sortedArticles[0];
-  const otherArticles = sortedArticles.filter((article) => article.id !== featuredArticle.id);
+  const sortedArticles = [...articles].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const featuredArticle =
+    articles.find((article) => article.id === 6) ?? sortedArticles[0];
+
+  const otherArticles = sortedArticles.filter(
+    (article) => article.id !== featuredArticle.id
+  );
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -62,7 +84,7 @@ const Blog = () => {
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-3xl">
             <Badge className="mb-5 bg-accent/20 text-accent border border-accent/20">
-              Blog 
+              Blog
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Artículos de LinkedIn para que tu empresa esté siempre informada.
@@ -106,7 +128,11 @@ const Blog = () => {
                       {featuredArticle.author}
                     </p>
                   </div>
-                  <Button asChild size="lg" className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:bg-accent/90">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:bg-accent/90"
+                  >
                     <a href={featuredArticle.href} target="_blank" rel="noreferrer">
                       Leer en LinkedIn <ArrowRight className="h-4 w-4" />
                     </a>
@@ -138,16 +164,21 @@ const Blog = () => {
                   </li>
                 </ul>
               </div>
+
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-primary/25 bg-primary/18 p-6 shadow-xl">
                   <p className="text-xs uppercase tracking-[0.25em] text-accent">Impacto</p>
                   <h4 className="mt-4 text-xl font-semibold text-white">Decisiones más seguras</h4>
-                  <p className="mt-3 text-slate-200 leading-relaxed">Nuestro contenido traduce obligaciones en acciones claras para tu empresa.</p>
+                  <p className="mt-3 text-slate-200 leading-relaxed">
+                    Nuestro contenido traduce obligaciones en acciones claras para tu empresa.
+                  </p>
                 </div>
                 <div className="rounded-3xl border border-primary/25 bg-primary/18 p-6 shadow-xl">
                   <p className="text-xs uppercase tracking-[0.25em] text-accent">Alcance</p>
                   <h4 className="mt-4 text-xl font-semibold text-white">Lectura directa</h4>
-                  <p className="mt-3 text-slate-200 leading-relaxed">Contenidos pensados para empresarios y líderes administrativos.</p>
+                  <p className="mt-3 text-slate-200 leading-relaxed">
+                    Contenidos pensados para empresarios y líderes administrativos.
+                  </p>
                 </div>
               </div>
             </div>
@@ -159,13 +190,20 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="mb-12 max-w-2xl">
             <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Últimos artículos</p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-slate-900">Conecta tu empresa con la agenda actual.</h2>
-            <p className="mt-5 text-base text-slate-600 leading-relaxed">Solo mostramos los artículos que compartimos en LinkedIn, con análisis enfocado en las decisiones que tu compañía necesita hoy.</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-slate-900">
+              Conecta tu empresa con la agenda actual.
+            </h2>
+            <p className="mt-5 text-base text-slate-600 leading-relaxed">
+              Solo mostramos los artículos que compartimos en LinkedIn, con análisis enfocado en las decisiones que tu compañía necesita hoy.
+            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
             {otherArticles.map((article) => (
-              <Card key={article.id} className="overflow-hidden border border-primary/10 bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card
+                key={article.id}
+                className="overflow-hidden border border-primary/10 bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
                 <CardContent className="p-7">
                   <div className="flex flex-wrap items-center gap-3">
                     <Badge className="bg-primary/10 text-primary">{article.category}</Badge>
